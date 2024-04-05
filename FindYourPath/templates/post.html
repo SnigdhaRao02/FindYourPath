@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div id="carouselExample" class="carousel slide" data-interval="false">
+  <div class="carousel-inner">
+    {% for post in posts %} 
+    <div class="carousel-item {% if loop.index ==1 %} active {%endif%}" id="slide{{loop.index}}">
+      <div class="row">
+        
+        <div class="col-sm-6">
+          
+          <div class="card">
+            
+            <div class="card-body">
+              <h5 class="card-title">{{post.JobTitle}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">By {{post.FirstName}} {{post.LastName}}</h6>
+              <p class="card-text">{{post.Overview}}</p>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-1YZChVdKy0?si=S7dZtvbLX06CFn5V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>       
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Experience Level- {{post.Level}}</h5>
+              <p class="card-text">{{post.MyStory}}</p>
+              <h5 class="card-title">Time Spent in a day</h5>
+              <div class="progress">
+                <br>
+                <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Meetings</div>
+                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Coding</div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: 57%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Documenting</div>
+              </div>
+              <br>
+            
+              <a href="{{post.LinkedIn}}" class="btn btn-social-icon btn-linkedin">
+                <span class="fa fa-linkedin"></span>
+              </a>
+              <a href="{{post.Email}}" class="btn btn-social-icon btn-google">
+                <span class="fa fa-google"></span>
+              </a>
+              
+            </div>
+          </div>
+        </div>      
+      </div>
+    </div>
+    
+    {%endfor%}
+      <center>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" style="height: 5%; width: 5%;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span> 
+    </button>
+  </center>
+  <!-- </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+    
+  </button>
+</div>
+
+
+
+
+    
+
+
+ 
+
+    
+{% endblock content %}

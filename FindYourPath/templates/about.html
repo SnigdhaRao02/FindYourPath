@@ -1,0 +1,381 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="container-fluid cont">
+    <div class="about-container p-0">
+
+   
+    <div class="row scroll" >
+      <div style="--t:30s">
+        
+        <a href="/post"><span>Electrical</span>
+        <a href="/post"><span>Computer Science</span>
+        <a href="/post"><span>Mechanical</span>
+        <a href="/post"><span>Economics</span>
+        <a href="/post"><span>Engineering</span>
+        <a href="/post"><span>Finance</span>
+        <a href="/post"><span>Civil</span>
+        <a href="/post"><span>Psychology</span>
+        <a href="/post"><span>Logistics</span>
+      </div>
+      <div style="--t:50s">
+        <a href="/post"> <span>Computer Engineering</span>
+          <a href="/post"> <span>Industrial</span>
+            <a href="/post"><span>Consturction Services</span>
+              <a href="/post"><span>Pharmacy</span>
+                <a href="/post"><span>Business Administration</span>
+                  <a href="/post"> <span>Information Systems</span>
+                    <a href="/post"> <span>Management</span>
+                      <a href="/post"> <span>Healthcare Administration</span>
+      </div>
+      <div style="--t:25s">
+        <a href="/post">  <span>Chemistry</span>
+          <a href="/post">  <span>Math</span>
+            <a href="/post">  <span>Pol Science</span>
+              <a href="/post">  <span>Fine Arts</span>
+                <a href="/post">  <span>Liberal Arts</span>
+                  <a href="/post">  <span>Graphic Design</span>
+                    <a href="/post">  <span>Aerospace</span>
+      </div>
+      <div style="--t:40s">
+        <a href="/post">  <span>International Relations</span>
+          <a href="/post">   <span>Architecture</span>
+            <a href="/post">  <span>Biochemistry</span>
+              <a href="/post">  <span>Marketing</span>
+                <a href="/post">  <span>Nursing</span>
+                  <a href="/post"> <span>Accounting</span>
+                    <a href="/post"> <span>Doctor</span>
+      </div>
+      
+
+    </div>
+    </div>
+
+    <div class="col-12 text-center">
+      <h2 class="feat-h2">Featured Profiles</h2>
+      <p>Here are the hot and trending blogs...</p>
+    </div>
+
+    
+    <div id="cCarousel">
+      
+      <div class="arrow" id="prev"><</div>
+      <div class="arrow" id="next">></div>
+  
+      <div id="carousel-vp">
+        
+        <div id="cCarousel-inner" data-bs-ride="carousel">
+          {% for post in posts %}
+         
+         
+       
+        
+       
+  
+        <a href="/post">
+          <article class="cCarousel-item" >
+            <img src="https://images.unsplash.com/photo-1564292284209-60cce69f08ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQ0MTA1MTJ8&ixlib=rb-4.0.3&q=80&w=400" alt="Moon">
+            <div class="infos">
+              <h5 class="card-title">By {{post.FirstName}} {{post.LastName}}</h5>
+              <p class="card-text">{{post.JobTitle}}</p>
+            </div>
+          </article>
+        </a>
+  
+       
+  
+         
+  
+        
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+    <script src="{{url_for('static', filename='about.js')}}"></script>
+
+
+
+
+
+
+
+
+
+    <!-- <div id="carouselExampleControls" class="p-3 carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card h-100">
+                <img src="static/pics/bean.jpg" class="bean card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        
+      </button>
+    </div> -->
+
+
+    
+
+
+    
+      
+
+    </div>
+  </div>
+        
+
+
+
+
+<!-- <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#"></a>
+              <small class="text-muted"></small>
+            </div>
+            <h2><a class="article-title" href="#">Software Engineering</a></h2>
+            <p class="article-content">Software,Python,C++</p>
+          </div>
+        </article>
+        <article class="media content-section">
+            <div class="media-body">
+              <div class="article-metadata">
+                <a class="mr-2" href="#"></a>
+                <small class="text-muted"></small>
+              </div>
+              <h2><a class="article-title" href="#">Finance</a></h2>
+              <p class="article-content">Math,Budget,Plan</p>
+            </div>
+          </article> -->
+    
+{% endblock content %}

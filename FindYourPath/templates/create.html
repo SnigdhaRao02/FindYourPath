@@ -1,0 +1,222 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!-- <div class="content-section"> -->
+        <form class="row m-4" method="POST" action="">
+            {{ form.hidden_tag() }}
+            <form class="row g-3">
+                <legend class="border-bottom m-4">Developer's Profile</legend>
+                <div class=" col-md-4">
+                    {{ form.FirstName.label(class="form-control-label") }}
+
+                    {% if form.FirstName.errors %}
+                        {{ form.FirstName(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.FirstName.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.FirstName(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-4">
+                    {{ form.LastName.label(class="form-control-label") }}
+
+                    {% if form.LastName.errors %}
+                        {{ form.LastName(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.LastName.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.LastName(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-4">
+                    {{ form.JobTitle.label(class="form-control-label") }}
+
+                    {% if form.JobTitle.errors %}
+                        {{ form.JobTitle(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.JobTitle.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.JobTitle(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    {{ form.Overview.label(class="form-control-label") }}
+
+                    {% if form.Overview.errors %}
+                        {{ form.Overview(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.Overview.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.Overview(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    {{ form.MyStory.label(class="form-control-label") }}
+
+                    {% if form.MyStory.errors %}
+                        {{ form.MyStory(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.MyStory.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.MyStory(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-4">
+                    {{ form.Category.label(class="form-control-label") }}
+
+                    {% if form.Category.errors %}
+                        {{ form.Category(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.Category.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.Category(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-4">
+                    {{ form.Level.label(class="form-control-label") }}
+
+                    {% if form.Level.errors %}
+                        {{ form.Level(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.Level.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.Level(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-4">
+                    {{ form.NumberofHours.label(class="form-control-label") }}
+
+                    {% if form.NumberofHours.errors %}
+                        {{ form.NumberofHours(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.NumberofHours.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.NumberofHours(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                
+                <div class="col-md-6">
+                    {{ form.Email.label(class="form-control-label") }}
+
+                    {% if form.Email.errors %}
+                        {{ form.Email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.Email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.Email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    {{ form.LinkedIn.label(class="form-control-label") }}
+
+                    {% if form.LinkedIn.errors %}
+                        {{ form.LinkedIn(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.LinkedIn.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.Email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-12">
+                    <div id="editors">
+                        <div class="editor-container">
+                            <label for="content">Content</label>
+                            <div class="editor" style="height: 300px;"></div>
+                            <textarea name="content" style="display: none;"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" id="add-editor" class="btn btn-outline-dark m-2">Add Editor</button>
+                    <br>
+                    <button type="submit" class="btn btn-outline-dark m-2">Submit</button>
+
+                </div>
+                
+            </form>
+            <!-- <div class="col-md-12 m-4">
+                {{ form.submit(class="btn btn-outline-dark") }}
+            </div> -->
+            <!-- <form method="POST" id="editor-form">
+                
+            </form> -->
+        
+            <!-- Quill.js script -->
+            <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+            <script>
+                var toolbarOptions = [
+                    ['bold', 'italic', 'underline'],        // toggled buttons
+                    ['link', 'image']                       // link and image, 
+                ];
+        
+                function createEditor(container) {
+                    var editor = document.createElement('div');
+                    editor.className = 'editor';
+                    container.appendChild(editor);
+                    var quill = new Quill(editor, {
+                        theme: 'snow',
+                        modules: {
+                            toolbar: toolbarOptions
+                        }
+                    });
+                    return quill;
+                }
+        
+                var editorContainer = document.getElementById('editors');
+                var addEditorButton = document.getElementById('add-editor');
+                addEditorButton.addEventListener('click', function() {
+                    var newEditorContainer = document.createElement('div');
+                    newEditorContainer.className = 'editor-container';
+                    editorContainer.appendChild(newEditorContainer);
+                    var newLabel = document.createElement('label');
+                    newLabel.textContent = 'Content';
+                    newEditorContainer.appendChild(newLabel);
+                    var newEditor = createEditor(newEditorContainer);
+                    var newTextarea = document.createElement('textarea');
+                    newTextarea.name = 'content';
+                    newTextarea.style.display = 'none';
+                    newEditorContainer.appendChild(newTextarea);
+                });
+        
+                // Set the value of the textarea when form is submitted
+                var form = document.getElementById('editor-form');
+                form.onsubmit = function() {
+                    var editors = document.querySelectorAll('.editor-container .editor');
+                    editors.forEach(function(editor, index) {
+                        var textarea = editor.nextElementSibling;
+                        textarea.value = editor.querySelector('.ql-editor').innerHTML;
+                        textarea.name = 'content_' + index;
+                    });
+                };
+            </script>
+        </form>
+    <!-- </div> -->
+   
+{% endblock content %}
