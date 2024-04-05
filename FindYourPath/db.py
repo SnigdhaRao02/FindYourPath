@@ -6,7 +6,7 @@ import pprint
 class DB:
 
     def __init__(self) -> None:
-        self.uri = "mongodb+srv://atharvakale1234:ArJxyOTStetAa4PU@cluster0.6oj8h6f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        self.uri = YOUR_URI
         self.client =  MongoClient(self.uri,tlsCAFile=certifi.where())
         self.db=None
         self.ping()
